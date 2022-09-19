@@ -33,6 +33,7 @@ public class Practice1 {
         System.out.println("The first ball, created by default:");
         Ball defaultBall = new Ball(); // Ball object created by default constructor
         defaultBall.printInfo();
+        System.out.println(defaultBall);
         System.out.println("The second ball, created with the given arguments: ");
         Ball secondBall = new Ball(name, radius, color);
         secondBall.printInfo();

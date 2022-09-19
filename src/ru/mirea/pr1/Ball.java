@@ -45,6 +45,10 @@ public class Ball {
         System.out.println("\tradius: " + this.getRadius());
         System.out.println("\tcolor: " + this.getColor());
     }
+
+    //public String toString() {
+//        return ("\tИмя: " + this.getName() + "\tРадиус: " + this.getRadius() +"\tЦвет: " + this.getColor());
+    //}
     // Method for throwing ball
     public void throwIt() {
         System.out.println("You throwed the ball named " + this.getName());
