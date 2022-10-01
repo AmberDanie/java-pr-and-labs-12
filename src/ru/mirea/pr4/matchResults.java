@@ -50,7 +50,6 @@ class matchResults extends JFrame {
 
             @Override
             public void mouseEntered(MouseEvent e) {
-
             }
 
             @Override

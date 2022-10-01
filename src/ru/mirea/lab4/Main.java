@@ -15,5 +15,6 @@ public class Main {
         String planetName = scanner.nextLine();
         Planet planet = new Planet(planetName);
         System.out.print(cat.toString() + "\n" + car.toString() + "\n" + planet.toString());
+        System.out.println(cat.getName());
     }
 }

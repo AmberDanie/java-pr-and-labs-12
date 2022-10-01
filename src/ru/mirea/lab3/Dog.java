@@ -26,5 +26,6 @@ public abstract class Dog {
     }
 
     public abstract void bark();
+    @Override
     public abstract String toString();
 }
