@@ -12,9 +12,11 @@ public class SortingStudentsByGPA implements Comparator {
             System.out.print(array.get(i));
             if (i != array.size() - 1)
                 System.out.print(" ");
-            if (i % 5 == 0 && i != 0) {
-                System.out.println("");
-                System.out.print("\t\t\t\t\t  ");
+            if ((i+1) % 6 == 0) {
+                if (i != array.size() - 1) {
+                    System.out.println("");
+                    System.out.print("\t\t\t\t\t  ");
+                }
             }
             if (i == array.size() - 1)
                 System.out.println("]");

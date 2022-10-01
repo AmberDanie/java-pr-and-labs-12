@@ -17,7 +17,7 @@ public class Main {
         System.out.print("List before sorting: ");
         students.printList(studentsList);
         students.quickSort(studentsList, 0, studentsList.size() - 1);
-        System.out.print("List after sorting: ");
+        System.out.print("List after sorting:  ");
         students.printList(studentsList);
     }
 }
