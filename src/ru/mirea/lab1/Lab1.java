@@ -9,8 +9,10 @@ public class Lab1 {
     public static void main(String[] args) {
         factorialClass obj = new factorialClass();
         Scanner scanner = new Scanner(System.in);
-        System.out.print("n: ");
-        int n = Integer.parseInt(scanner.nextLine());
-        System.out.println(n + "! = " + obj.fact(n));
+        for (int i = 0; i < 3; i++) {
+            System.out.print("n: ");
+            int n = Integer.parseInt(scanner.nextLine());
+            System.out.println(n + "! = " + obj.fact(n));
+        }
     }
 }
