@@ -45,12 +45,18 @@ public class Game extends JFrame {
                     imageLabel.setVisible(false);
                     northPanel.setText("You chose card with number " + cardId + ". " +
                             (5 - countOfChosenCards) + " cards left to choose");
+                    // Здесь надо добавлять карту к первому игроку
                     if (countOfChosenCards == 5) {
-                        for (int i = 0; i < cards.size(); i++) {
+                        while (cards.size() != 0) {
                             Card card = cards.pop();
                             card.getImageLabel().setVisible(false);
                             secondPlayerCards.add(card);
                         }
+                        for (Card firstPlayerCard : firstPlayerCards)
+                            System.out.print(firstPlayerCard.getCardId() + " ");
+                        System.out.println();
+                        for (Card secondPlayerCard : secondPlayerCards)
+                            System.out.print(secondPlayerCard.getCardId() + " ");
                     }
                 }
 
