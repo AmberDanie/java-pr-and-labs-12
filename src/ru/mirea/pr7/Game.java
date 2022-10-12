@@ -45,7 +45,7 @@ public class Game extends JFrame {
                     imageLabel.setVisible(false);
                     northPanel.setText("You chose card with number " + cardId + ". " +
                             (5 - countOfChosenCards) + " cards left to choose");
-                    firstPlayerCards.add(this@)
+                    // здесь кидать надо карту в список первого (firstPlayerCards)
                     if (countOfChosenCards == 5) {
                         while (cards.size() != 0) {
                             Card card = cards.pop();
