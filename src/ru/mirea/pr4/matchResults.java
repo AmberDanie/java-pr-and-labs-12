@@ -16,8 +16,6 @@ class matchResults extends JFrame {
     Label labelWinner = new Label("Winner: " + winner[winnerId]);
     public matchResults() {
         super("AC Milan | Real Madrid");
-        setSize(400, 400);
-        setLayout(new BorderLayout());
         add(buttonACMilan, BorderLayout.WEST);
         buttonACMilan.addMouseListener(new MouseListener() {
             @Override
