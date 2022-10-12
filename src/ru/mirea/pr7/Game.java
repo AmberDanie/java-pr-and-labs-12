@@ -60,7 +60,6 @@ public class Game extends JFrame {
                         centerPanel.remove(firstPlayerCards.get(i).imageLabel);
                         centerPanel.remove(secondPlayerCards.get(i).imageLabel);
                     }
-                    removeMouseListener(this);
                     System.out.println(middle());
                 }
             }
@@ -108,7 +107,7 @@ public class Game extends JFrame {
         frame.pack();
         frame.setVisible(true);
     }
-    public String middle()  {
+    public String middle() {
         // Раскладываем выбранные карты
         prepareCards(firstPlayerCards, southPanel);
         prepareCards(secondPlayerCards, northPanel);
@@ -159,10 +158,9 @@ public class Game extends JFrame {
                 }
             }
             if (i == 105) {
-                centerLabel.setText("Second");
+                centerLabel.setText("Botva");
                 return "botva";
             }
-            // здесь надо паузу
         }
         if (firstPlayerCards.size() == 0) {
             centerLabel.setText("Second");
