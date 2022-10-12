@@ -120,30 +120,42 @@ public class Game extends JFrame {
         //
         for (int i = 0; i < 106 && firstPlayerCards.size() != 0 &&
                 secondPlayerCards.size() != 0; i++) {
-            Card card1 = firstPlayerCards.pop();
-            Card card2 = secondPlayerCards.pop();
+            Card card1 = firstPlayerCards.firstElement();
+            Card card2 = secondPlayerCards.firstElement();
             if ((card1.cardId == 0 && card2.cardId == 9) || (card1.cardId == 9 && card2.cardId == 0)) {
                 if (card1.cardId == 0) {
+                    southPanel.remove(card1.imageLabel);
+                    southPanel.add(card1.imageLabel);
                     southPanel.add(card2.imageLabel);
                     firstPlayerCards.add(card1);
                     firstPlayerCards.add(card2);
+                    secondPlayerCards.remove(card2);
                 }
                 else {
+                    northPanel.remove(card2.imageLabel);
+                    northPanel.add(card2.imageLabel);
                     northPanel.add(card1.imageLabel);
-                    secondPlayerCards.add(card1);
                     secondPlayerCards.add(card2);
+                    secondPlayerCards.add(card1);
+                    firstPlayerCards.remove(card1);
                 }
             }
             else {
                 if (card1.cardId > card2.cardId) {
+                    southPanel.remove(card1.imageLabel);
+                    southPanel.add(card1.imageLabel);
                     southPanel.add(card2.imageLabel);
                     firstPlayerCards.add(card1);
                     firstPlayerCards.add(card2);
+                    secondPlayerCards.remove(card2);
                 }
                 else {
+                    northPanel.remove(card2.imageLabel);
+                    northPanel.add(card2.imageLabel);
                     northPanel.add(card1.imageLabel);
-                    secondPlayerCards.add(card1);
                     secondPlayerCards.add(card2);
+                    secondPlayerCards.add(card1);
+                    firstPlayerCards.remove(card1);
                 }
             }
             if (i == 105) {
