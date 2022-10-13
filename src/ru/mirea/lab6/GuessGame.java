@@ -82,12 +82,6 @@ public class GuessGame extends JFrame {
         }
     }
     public GuessGame() {
-      //  JLabel emptyLabelLeft = new JLabel("           ");
-        //JLabel emptyLabelRight = new JLabel("");
-        JPanel westPanel = new JPanel();
-        //westPanel.add(emptyLabelLeft);
-        JPanel eastPanel = new JPanel();
-        //eastPanel.add(emptyLabelRight);
         Font font = new Font("Times new roman", Font.BOLD, 64);
         messageSouthLabel.setFont(font);
         JPanel southPanel = new JPanel();
