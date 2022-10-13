@@ -16,7 +16,7 @@ public class Game extends JFrame {
     private final Stack<Game.Card> firstPlayerCards = new Stack<>();
     private final Stack<Game.Card> secondPlayerCards = new Stack<>();
 
-    private int i = 1   ;
+    private int i = 1;
     Timer timer = new Timer(500, new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -36,13 +36,11 @@ public class Game extends JFrame {
                     southPanel.add(card2.imageLabel);
                     firstPlayerCards.add(card1);
                     firstPlayerCards.add(card2);
-                    secondPlayerCards.remove(card2);
                 } else {
                     northPanel.add(card2.imageLabel);
                     northPanel.add(card1.imageLabel);
                     secondPlayerCards.add(card2);
                     secondPlayerCards.add(card1);
-                    firstPlayerCards.remove(card1);
                 }
             } else {
                 if (card1.cardId > card2.cardId) {
@@ -50,13 +48,11 @@ public class Game extends JFrame {
                     southPanel.add(card2.imageLabel);
                     firstPlayerCards.add(card1);
                     firstPlayerCards.add(card2);
-                    secondPlayerCards.remove(card2);
                 } else {
                     northPanel.add(card2.imageLabel);
                     northPanel.add(card1.imageLabel);
                     secondPlayerCards.add(card2);
                     secondPlayerCards.add(card1);
-                    firstPlayerCards.remove(card1);
                 }
             }
             if (firstPlayerCards.size() == 0) {
@@ -76,7 +72,7 @@ public class Game extends JFrame {
             }
             if(i==106){
                 textLabel.setText("BOTVA");
-                textLabel.setFont(new Font("Times new roman", Font.BOLD, 128));
+                textLabel.setFont(new Font("Times new roman", Font.BOLD, 64));
                 timer.stop();
                 return;
             }

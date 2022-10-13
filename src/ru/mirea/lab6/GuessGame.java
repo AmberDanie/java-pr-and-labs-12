@@ -106,7 +106,9 @@ public class GuessGame extends JFrame {
         messageNorthLabel.setFont(font);
         for (int i = 1; i <= 20; i++)
             new Number(i);
-        Number.guessedNum = (int) Math.floor(Math.random() * 20);
+        Number.guessedNum = (int) Math.floor((Math.random() * 20));
+        if (Number.guessedNum == 0)
+            Number.guessedNum++;
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
     }
