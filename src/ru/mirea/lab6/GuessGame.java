@@ -99,8 +99,6 @@ public class GuessGame extends JFrame {
         frame.add(northPanel, BorderLayout.NORTH);
         frame.add(centralPanel, BorderLayout.CENTER);
         frame.add(southPanel, BorderLayout.SOUTH);
-        frame.add(westPanel, BorderLayout.WEST);
-        frame.add(eastPanel, BorderLayout.EAST);
         northPanel.add(messageNorthLabel);
         messageNorthLabel.setHorizontalAlignment(JLabel.CENTER);
         messageNorthLabel.setFont(font);
