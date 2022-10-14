@@ -59,7 +59,7 @@ public class GuessGame extends JFrame {
                     Number.this.textId.removeMouseListener(Number.this.ml);
                     Number.this.textId.setFont(fontSmall);
                     Number.this.textId.setForeground(new Color(200, 0, 0));
-                    Number.this.textId.setBackground(new Color(100, 0, 0));
+                    Number.this.textId.setBackground(new Color(100, 0,0));
                     tries--;
                     if (tries == 0) {
                         messageNorthLabel.setText("=(");
