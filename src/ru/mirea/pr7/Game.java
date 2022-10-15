@@ -162,6 +162,7 @@ public class Game extends JFrame {
     public Game() {
         northLabel.setHorizontalAlignment(JLabel.CENTER);
         frame.setLayout(new BorderLayout());
+        frame.setIconImage(new ImageIcon("src/ru/mirea/pr7/cards/icon.png").getImage());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         opening();
     }
@@ -183,7 +184,7 @@ public class Game extends JFrame {
         // Раскладываем выбранные карты
         prepareCards(firstPlayerCards, southPanel);
         prepareCards(secondPlayerCards, northPanel);
-        //
+
         frame.remove(northLabel);
         frame.add(centerPanel, BorderLayout.CENTER);
         textLabel.setHorizontalAlignment(JLabel.CENTER);
