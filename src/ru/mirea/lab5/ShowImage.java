@@ -11,7 +11,7 @@ public class ShowImage extends JFrame {
     private final JLabel imgLabel;
     private int imgNum = 0;
 
-    ShowImage(){
+    public ShowImage(){
         this.setSize(640, 480);
         ImageIcon img = new ImageIcon("src/ru/mirea/lab5/pepe/frame_0.png");
         imgLabel = new JLabel("", img, SwingConstants.CENTER);
@@ -23,6 +23,6 @@ public class ShowImage extends JFrame {
     }
     private void nextImg(){
         imgLabel.setIcon(new ImageIcon("src/ru/mirea/lab5/pepe/frame_"+(imgNum++)+".png"));
-        if(imgNum == 105) imgNum = 0;
+        if (imgNum == 105) imgNum = 0;
     }
 }

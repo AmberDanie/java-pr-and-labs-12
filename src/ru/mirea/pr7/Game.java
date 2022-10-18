@@ -92,7 +92,7 @@ public class Game extends JFrame {
         private final JLabel imageLabel;
         private final ImageIcon imgIcon;
 
-        private final MouseListener ml = new MouseAdapter() {
+        private final MouseListener mouseClicked = new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 countOfChosenCards++;
@@ -124,38 +124,25 @@ public class Game extends JFrame {
             Image newImg = image.getScaledInstance(size, size, java.awt.Image.SCALE_SMOOTH);
             imageLabel = new JLabel(new ImageIcon(newImg));
             imageLabel.setOpaque(false);
-            // изменяем размеры картинки под 256х256 для удобства
-            // изменяем размеры картинки под 256х256 для удобства
-            MouseListener ma = new MouseAdapter() {
+
+            MouseListener mouseChoose = new MouseAdapter() {
                 @Override
                 public void mouseEntered(MouseEvent e) {
-                    Image image = imgIcon.getImage(); // изменяем размеры картинки под 256х256 для удобства
-                    Image newImg = image.getScaledInstance(size + (size / 16), size + (size / 16), Image.SCALE_SMOOTH);
+                    Image image = imgIcon.getImage();
+                    Image newImg = image.getScaledInstance(size + (size / 16),
+                            size + (size / 16), Image.SCALE_SMOOTH);
                     imageLabel.setIcon(new ImageIcon(newImg));
                 }
 
                 @Override
                 public void mouseExited(MouseEvent e) {
-                    Image image = imgIcon.getImage(); // изменяем размеры картинки под 256х256 для удобства
+                    Image image = imgIcon.getImage();
                     Image newImg = image.getScaledInstance(size, size, Image.SCALE_SMOOTH);
                     imageLabel.setIcon(new ImageIcon(newImg));
                 }
             };
-            imageLabel.addMouseListener(ma);
-            imageLabel.addMouseListener(ml);
-        }
-    }
-
-    public void prepareCards(Stack<Game.Card> cards, JPanel panel) {
-        for (Card card : cards) {
-            JLabel imageLabel = card.imageLabel;
-            Image image = card.imgIcon.getImage(); // изменяем размеры картинки под 256х256 для удобства
-            Image newImg = image.getScaledInstance(128, 128, java.awt.Image.SCALE_SMOOTH);
-            Card.size = 128;
-            imageLabel.setIcon(new ImageIcon(newImg));
-            imageLabel.setVisible(true);
-            panel.add(imageLabel);
-            imageLabel.removeMouseListener(card.ml);
+            imageLabel.addMouseListener(mouseChoose);
+            imageLabel.addMouseListener(mouseClicked);
         }
     }
 
@@ -178,6 +165,19 @@ public class Game extends JFrame {
 
         frame.pack();
         frame.setVisible(true);
+    }
+
+    public void prepareCards(Stack<Game.Card> cards, JPanel panel) {
+        for (Card card : cards) {
+            JLabel imageLabel = card.imageLabel;
+            Image image = card.imgIcon.getImage();
+            Image newImg = image.getScaledInstance(128, 128, java.awt.Image.SCALE_SMOOTH);
+            Card.size = 128;
+            imageLabel.setIcon(new ImageIcon(newImg));
+            imageLabel.setVisible(true);
+            panel.add(imageLabel);
+            imageLabel.removeMouseListener(card.mouseClicked);
+        }
     }
 
     public void middle() {

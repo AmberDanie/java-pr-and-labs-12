@@ -1,12 +1,11 @@
 package ru.mirea.lab7;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Queue;
 public class Main {
     public static void main(String[] args) {
-        ArrayList<String> myArray=new ArrayList<String>();
-        Queue <String> q = new ArrayDeque<String>();
+        ArrayList<String> myArray=new ArrayList<>();
+        Queue <String> q = new ArrayDeque<>();
         q.add("dogs");
         q.add("cats");
         myArray.add("parrots");
@@ -34,8 +33,6 @@ public class Main {
         myArray.clear();
         System.out.println();
         System.out.print("Array after  clean: ");
-        for (String s : myArray) {
-            System.out.print(s + " ");
-        }
+        for (String s : myArray) { System.out.print(s + " "); }
     }
 }
