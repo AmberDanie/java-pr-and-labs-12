@@ -26,36 +26,29 @@ public class SortingStudentsByGPA implements Comparator {
     public void quickSort(ArrayList<String> array, int low, int high) {
         if (array.size() == 0)
             return;//завершить выполнение, если длина массива равна 0
-
         if (low >= high)
             return;//завершить выполнение если уже нечего делить
-
         // выбрать опорный элемент
         int middle = low + (high - low) / 2;
         float opora = Float.parseFloat(array.get(middle).substring(array.get(middle).indexOf(" ") + 1));
-
         // разделить на подмассивы, который больше и меньше опорного элемента
         int i = low, j = high;
         while (i <= j) {
             while (Float.parseFloat(array.get(i).substring(array.get(i).indexOf(" ")+1)) > opora) {
                 i++;
             }
-
             while (Float.parseFloat(array.get(j).substring(array.get(j).indexOf(" ") + 1)) < opora) {
                 j--;
             }
-
             if (i <= j) {//меняем местами
                 Collections.swap(array, i, j);
                 i++;
                 j--;
             }
         }
-
         // вызов рекурсии для сортировки левой и правой части
         if (low < j)
             quickSort(array, low, j);
-
         if (high > i)
             quickSort(array, i, high);
     }
