@@ -17,7 +17,7 @@ public class LabClassUI {
     private JTextField textA;
     private JPanel centerPanel;
     private JButton textButton;
-    private JButton returnButton = new JButton("Return to full list");
+    private final JButton returnButton = new JButton("Return to full list");
     private final JPanel eastPanel = new JPanel(new GridLayout(3, 1));
     private final JPanel westPanel = new JPanel(new GridLayout(3, 1));
     private final JPanel southPanel = new JPanel(new GridLayout(1, 3));
@@ -58,10 +58,9 @@ public class LabClassUI {
             for (int j = 0; j < 14; j++)
                 centerPanel.add(Box.createVerticalStrut(0));
             try {
-                for (int i = 0; i < students.size(); i++) {
-                    if (students.get(i).getStudentLastname().equals(studentSearch)) {
-                        JLabel stud = students.get(i).getStudentLabel();
-                        stud.setVerticalAlignment(0);
+                for (Student student : students) {
+                    if (student.getStudentLastname().equals(studentSearch)) {
+                        JLabel stud = student.getStudentLabel();
                         centerPanel.add(stud);
                         flag = true;
                     }
@@ -71,8 +70,8 @@ public class LabClassUI {
                     throw new StudentNotFoundException("Student not found");
                 }
             }
-            catch(StudentNotFoundException ignored) {
-                ignored.printStackTrace();
+            catch(StudentNotFoundException ex) {
+                ex.printStackTrace();
             }
             southPanel.removeAll();
             southPanel.add(Box.createVerticalStrut(0));

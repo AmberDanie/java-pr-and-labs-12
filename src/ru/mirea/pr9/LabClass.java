@@ -11,14 +11,14 @@ public class LabClass {
             return;//завершить выполнение если уже нечего делить
         // выбрать опорный элемент
         int middle = low + (high - low) / 2;
-        float opora = array.get(middle).getStudentScore();
+        float helper = array.get(middle).getStudentScore();
         // разделить на подмассивы, который больше и меньше опорного элемента
         int i = low, j = high;
         while (i <= j) {
-            while (array.get(i).getStudentScore() > opora) {
+            while (array.get(i).getStudentScore() > helper) {
                 i++;
             }
-            while (array.get(j).getStudentScore() < opora) {
+            while (array.get(j).getStudentScore() < helper) {
                 j--;
             }
             if (i <= j) {//меняем местами
@@ -40,14 +40,14 @@ public class LabClass {
             return;//завершить выполнение если уже нечего делить
         // выбрать опорный элемент
         int middle = low + (high - low) / 2;
-        String opora = array.get(middle).getStudentLastname();
+        String helper = array.get(middle).getStudentLastname();
         // разделить на подмассивы, который больше и меньше опорного элемента
         int i = low, j = high;
         while (i <= j) {
-            while (array.get(i).getStudentLastname().compareTo(opora) < 0) {
+            while (array.get(i).getStudentLastname().compareTo(helper) < 0) {
                 i++;
             }
-            while (array.get(j).getStudentLastname().compareTo(opora) > 0) {
+            while (array.get(j).getStudentLastname().compareTo(helper) > 0) {
                 j--;
             }
             if (i <= j) {//меняем местами

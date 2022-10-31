@@ -9,9 +9,9 @@ import java.awt.event.MouseListener;
 public class Student {
     private final String studentLastname;
     private final float studentScore;
-    private JLabel studentLabel;
-    private Font defaultFont = new Font("Times new roman", Font.BOLD, 20);
-    private Font biggerFont = new Font("Times new roman", Font.BOLD, 24);
+    private final JLabel studentLabel;
+    private final Font defaultFont = new Font("Times new roman", Font.BOLD, 20);
+    private final Font biggerFont = new Font("Times new roman", Font.BOLD, 24);
     MouseListener textML = new MouseAdapter() {
         @Override
         public void mouseEntered(MouseEvent e) {
@@ -31,7 +31,6 @@ public class Student {
         studentLabel.addMouseListener(textML);
         this.studentLastname = studentLine.substring(0, studentLine.indexOf(" "));
         this.studentScore = Float.parseFloat(studentLine.substring(studentLine.indexOf(" ") + 1));
-        System.out.println(studentLastname + "-" + studentScore);
     }
 
     public float getStudentScore() {
