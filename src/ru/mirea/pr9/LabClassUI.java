@@ -176,6 +176,7 @@ public class LabClassUI {
         buttonPanel.add(textButton);
         for (int i = 0; i < 2; i++)
             buttonPanel.add(Box.createVerticalStrut(0));
+
         frame.add(eastPanel, BorderLayout.EAST);
         frame.add(westPanel, BorderLayout.WEST);
         frame.add(southPanel, BorderLayout.SOUTH);
