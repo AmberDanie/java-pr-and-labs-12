@@ -11,9 +11,8 @@ public class ThrowsDemo {
         }
     }
     public String getDetails(String key) {
-        if(key == null) {
+        if(key == null)
             throw new NullPointerException("null key in getDetails");
-        }
         return "Data for " + key;
     }
 }
