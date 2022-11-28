@@ -21,12 +21,6 @@ public class Main {
     }
 
     public static void task4() {
-        /* Task 3.3:
-         * Написать регулярное выражение, определяющее является ли данная строчка датой в формате
-         * dd/mm/yyyy. Начиная с 1900 года до 9999 года.
-         * – пример правильных выражений: 29/02/2000, 30/04/2003, 01/01/2003.
-         * – пример неправильных выражений: 29/02/2001, 30-04-2003, 1/1/1899
-         */
         Scanner scanner = new Scanner(System.in);
         Pattern regexForDateValidation = Pattern.compile
                 ("^(?:(?:31([\\/])(?:0?[13578]|1[02]))\\1|(?:(?:29|30)" +
@@ -44,21 +38,13 @@ public class Main {
     }
 
     public static void task3() {
-        /* Task 3.1:
-         * Дан текст со списками цен. Извлечь из него цены в USD, RUВ, EU.
-         *  – пример правильных выражений: 25.98 USD.
-         *  – пример неправильных выражений: 44 ERR, 0.004 EU.
-         */
-
         String PRESET_TEXT_WITH_PRICES =
                 """
                 Some string
-                Another one
+                DLGJSGKSJGKJSGjk
                 486.91 EUR
                 302.34 EUR
                 383. USD (<- THAT'S WRONG)
-                500000 RUB
-                499999RUB
                 472.84USD
                 426.04 RUB
                 hi there
@@ -66,10 +52,8 @@ public class Main {
                 363.98 ERR (<- THAT'S WRONG)
                 210.91 EUR
                         """;
-
         Pattern regex = Pattern.compile("\\d+(\\.\\d+)?\\s(USD|EUR|RUB)");
         Matcher matcher = regex.matcher(PRESET_TEXT_WITH_PRICES);
-
         System.out.println("Task 3.1: found correct prices: ");
         while (matcher.find()) {
             System.out.println(matcher.group());
@@ -77,10 +61,6 @@ public class Main {
     }
 
     public static void task2() {
-        /* Task 2:
-         * Написать регулярное выражение, определяющее является ли данная строка строкой
-         * "abcdefghijklmnopqrstuv18340" или нет.
-         */
         Scanner scanner = new Scanner(System.in);
         System.out.println("Task 2: input string to test it (one whole line):");
         String stringToTest = scanner.nextLine();

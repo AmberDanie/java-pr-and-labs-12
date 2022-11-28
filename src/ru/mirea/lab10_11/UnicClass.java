@@ -62,7 +62,6 @@ public class UnicClass<T>{
 
 
     public void sort(Comparator<? super T> comp){
-        //Arrays.sort(l, comp); // java.lang.NullPointerException
         for (int i = 1; i < count; i++) {
             boolean ch = false;
             for(int j = count-1; j > i; j--){

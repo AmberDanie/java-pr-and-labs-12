@@ -9,10 +9,8 @@ public class LabClass {
             return;//завершить выполнение, если длина массива равна 0
         if (low >= high)
             return;//завершить выполнение если уже нечего делить
-        // выбрать опорный элемент
         int middle = low + (high - low) / 2;
         float helper = array.get(middle).getStudentScore();
-        // разделить на подмассивы, который больше и меньше опорного элемента
         int i = low, j = high;
         while (i <= j) {
             while (array.get(i).getStudentScore() > helper) {
